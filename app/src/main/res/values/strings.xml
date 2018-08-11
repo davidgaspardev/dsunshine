@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">dSunshine</string>
+
+    <string name="hello_world">Hello World!</string>
+
+    <!-- MENU -->
+    <string name="item_action_settings">Settings</string>
 </resources>
