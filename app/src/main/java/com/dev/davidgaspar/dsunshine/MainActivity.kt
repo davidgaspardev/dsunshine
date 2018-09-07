@@ -8,6 +8,8 @@ import android.view.MenuItem
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 class MainActivity: AppCompatActivity() {
 
@@ -51,6 +53,18 @@ class MainActivity: AppCompatActivity() {
 
             // Final initialization
             val root: View = inflater.inflate(R.layout.fragment_main, container, false)
+
+            val list: ArrayList<String> = ArrayList()
+            list.add("Today - Sunny - 88/63")
+            list.add("Tomorrow - Foggy - 70/46")
+            list.add("Weds - Cloudy - 72/46")
+            list.add("Thurs - Rainy - 64/51")
+            list.add("Fri - Foggy - 70/46")
+            list.add("Sat - Sunny - 76/68")
+
+            val listAdapter: ArrayAdapter<String> = ArrayAdapter(activity, R.layout.list_item_forecast, R.id.forecast_item, list)
+            val listView: ListView = root.findViewById(R.id.listview_forecast)
+            listView.adapter = listAdapter
 
             return root
 
